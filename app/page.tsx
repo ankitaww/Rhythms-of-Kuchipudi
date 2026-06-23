@@ -47,8 +47,8 @@ export default function Home() {
             <div className="rounded-[2rem] bg-gradient-to-br from-blue via-magenta to-orange p-1.5 shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={ph(800, 900, "Kuchipudi Dancer")}
-                alt="A Kuchipudi dancer mid-performance"
+                src="/kuchipudi-dancer.jpg"
+                alt="Kuchipudi dancers in full costume"
                 className="h-full w-full rounded-[1.7rem] object-cover"
               />
             </div>

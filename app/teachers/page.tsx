@@ -9,15 +9,28 @@ export const metadata: Metadata = {
   description: "Meet the gurus who carry the tradition forward.",
 };
 
-const TEACHERS: Teacher[] = [
-  { name: "Lakshmi Devi", role: "Senior Guru", bio: "Three decades of teaching, specializing in abhinaya and the traditional margam repertoire." },
-  { name: "Ravi Shankar", role: "Nattuvangam", bio: "Master of taalam and jathi, guiding students through the rhythmic foundations of the form." },
-  { name: "Anjali Menon", role: "Abhinaya Guru", bio: "Brings stories to life, teaching the expressive language of glance and gesture." },
-  { name: "Suresh Kumar", role: "Advanced Repertoire", bio: "Choreographs and trains senior students for full solo margam performances." },
-  { name: "Priya Nair", role: "Beginner Faculty", bio: "Introduces young dancers to adavus and the joy of their very first taalam." },
-  { name: "Deepa Rao", role: "Tarangam Specialist", bio: "Trains the iconic brass-plate balancing technique that defines Kuchipudi." },
-  { name: "Vikram Iyer", role: "Music & Vocals", bio: "Accompanies classes on vocals and cymbals, anchoring the live rhythm of the studio." },
-  { name: "Meera Joshi", role: "Performance Coach", bio: "Prepares dancers for the stage — poise, presence, and the Rangam recital." },
+const FOUNDER: Teacher = {
+  name: "Guru Durgesh Nandini Vemavarapu",
+  role: "Founder & Artistic Director",
+};
+
+const TRADITION: Teacher[] = [
+  { name: "Padmabhushan Dr. Vempati Chinna Satyam garu" },
+  { name: "Vempati Ravi Shankar" },
+  { name: "Bala Kondala Rao" },
+  { name: "Seetha Nagajyothi" },
+  { name: "Satya Priya Ramana" },
+];
+
+const ROK_TEACHERS: Teacher[] = [
+  { name: "Abhijna Mandapati" },
+  { name: "Ankita Vemavarapu" },
+  { name: "Garnepudi Surya Sindhuja" },
+  { name: "Gayathri Pamarthi" },
+  { name: "Phani Shyamala Adury" },
+  { name: "Satya Sundari Nidasanametla" },
+  { name: "Suraj Vardhan Naidu" },
+  { name: "Swathi Achanta" },
 ];
 
 // Each circular portrait ring uses a different petal gradient.
@@ -35,14 +48,36 @@ const RINGS = [
 export default function TeachersPage() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-      <SectionHeading eyebrow="Our Gurus" title="The teachers behind the tradition" />
+      <SectionHeading eyebrow="Our Founder" title="The one behind Rhythms of Kuchipudi" />
       <PetalDivider />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {TEACHERS.map((t, i) => (
-          <Reveal key={t.name} delay={(i % 4) * 80}>
-            <TeacherCard teacher={t} ringClass={RINGS[i % RINGS.length]} />
-          </Reveal>
-        ))}
+      <div className="mx-auto max-w-xs">
+        <Reveal>
+          <TeacherCard teacher={FOUNDER} ringClass={RINGS[0]} />
+        </Reveal>
+      </div>
+
+      <div className="mt-20">
+        <SectionHeading eyebrow="Our Lineage" title="The teachers behind the tradition" />
+        <PetalDivider />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {TRADITION.map((t, i) => (
+            <Reveal key={t.name} delay={(i % 4) * 80}>
+              <TeacherCard teacher={t} ringClass={RINGS[i % RINGS.length]} />
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <SectionHeading eyebrow="Our Faculty" title="Teachers of ROK" />
+        <PetalDivider />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {ROK_TEACHERS.map((t, i) => (
+            <Reveal key={t.name} delay={(i % 4) * 80}>
+              <TeacherCard teacher={t} ringClass={RINGS[i % RINGS.length]} />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

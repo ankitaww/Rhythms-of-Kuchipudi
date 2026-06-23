@@ -3,29 +3,22 @@ import PetalDivider from "@/components/PetalDivider";
 import SectionHeading from "@/components/SectionHeading";
 import Eyebrow from "@/components/Eyebrow";
 import Reveal from "@/components/Reveal";
-import { PETAL_BG, PETAL_BORDER, petalAt } from "@/components/petals";
+import { PETAL_BG, petalAt } from "@/components/petals";
 import { ph } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About — Rhythms of Kuchipudi",
   description:
-    "Our story, the art of Kuchipudi, the Guru-Shishya Parampara, milestones, and affiliations.",
+    "Our story, the art of Kuchipudi, the Guru-Shishya Parampara, and milestones.",
 };
 
 const MILESTONES = [
-  { year: "2009", text: "Rhythms of Kuchipudi opens its first studio with twelve students." },
-  { year: "2013", text: "First batch completes their Rangam graduation recital." },
-  { year: "2016", text: "School performs at the national classical dance festival." },
-  { year: "2019", text: "Crosses 250 students trained across all levels." },
-  { year: "2022", text: "Launches an advanced margam choreography program." },
-  { year: "2025", text: "Celebrates 500+ students and 25+ stage performances." },
-];
-
-const AFFILIATIONS = [
-  "Sangeet Natak Akademi",
-  "Andhra Natyam Council",
-  "Kuchipudi Kalakshetra",
-  "Indian Classical Arts Trust",
+  { year: "2006", text: "Guru Durgesh Nandini Vemavarapu founds a dance school in her humble home." },
+  { year: "2013", text: "She establishes her first school outside her home." },
+  { year: "2016", text: "Rhythms of Kuchipudi is born and recognised as a registered institution." },
+  { year: "2020", text: "Rhythms of Kuchipudi expands online, teaching and training students outside India." },
+  { year: "2025", text: "Rhythms of Kuchipudi begins its first franchise." },
+  { year: "Today", text: "Over 20 years on, students train across India and around the world." },
 ];
 
 export default function AboutPage() {
@@ -37,19 +30,23 @@ export default function AboutPage() {
           <Reveal>
             <Eyebrow>Our Story</Eyebrow>
             <h1 className="mt-3 font-heading text-4xl font-semibold text-purple sm:text-5xl">
-              A tradition passed hand to hand
+              From a humble home to a living tradition
             </h1>
             <p className="mt-6 font-body text-deep-navy/80">
-              At Rhythms of Kuchipudi, we don&apos;t just teach dance — we pass
-              down a living tradition. Rooted in the ancient village of Kuchipudi
-              in Andhra Pradesh, our school carries forward a 300-year-old art
-              form with devotion, discipline, and joy.
+              Rhythms of Kuchipudi began twenty years ago in the humble home of
+              Guru Durgesh Nandini Vemavarapu — a disciple of Padma Sri Dr.
+              Vempati Chinna Satyam and a Natya Visharad who has devoted her life
+              to this art. What started as a few students gathered around their
+              guru has, over the past decade, grown into a registered
+              institution.
             </p>
             <p className="mt-4 font-body text-deep-navy/80">
-              What began with a handful of students has grown into a community of
-              hundreds — but our heart remains the same: to honor the art, the
-              gurus who shaped it, and every young dancer who steps into the
-              studio for the first time.
+              Rooted in the 300-year-old Kuchipudi tradition of Andhra Pradesh,
+              the school is built on one belief: that this art is too precious to
+              be kept, and must be passed on. Staying true to her teaching
+              methods, every student learns to play the nattuvangam with
+              professional proficiency — and every student learns to become a
+              teacher, carrying the tradition forward in turn.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -129,18 +126,21 @@ export default function AboutPage() {
 
       <PetalDivider />
 
-      {/* Affiliations */}
-      <section className="mx-auto max-w-5xl px-5 pb-24 text-center">
-        <SectionHeading eyebrow="Recognized By" title="Affiliations" />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {AFFILIATIONS.map((a, i) => (
-            <Reveal key={a} delay={i * 70}>
-              <div className={`rounded-xl border-t-4 bg-white p-6 font-ui font-semibold text-deep-navy shadow-sm ${PETAL_BORDER[petalAt(i)]}`}>
-                {a}
-              </div>
-            </Reveal>
-          ))}
-        </div>
+      {/* YouTube embed */}
+      <section className="mx-auto max-w-4xl px-5 pb-24">
+        <SectionHeading eyebrow="In Performance" title="Watch our latest performance" />
+        <Reveal>
+          <div className="mt-10 aspect-video overflow-hidden rounded-2xl border-t-4 border-pink shadow-lg">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/6KyQfIPleAs"
+              title="Kuchipudi performance"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </Reveal>
       </section>
     </>
   );

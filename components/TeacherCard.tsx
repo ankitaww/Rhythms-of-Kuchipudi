@@ -5,8 +5,8 @@ import { ph } from "@/lib/content";
 
 export type Teacher = {
   name: string;
-  role: string;
-  bio: string;
+  role?: string;
+  bio?: string;
 };
 
 export default function TeacherCard({
@@ -38,18 +38,22 @@ export default function TeacherCard({
       <h3 className="mt-5 font-heading text-xl font-semibold text-purple">
         {teacher.name}
       </h3>
-      <p className="font-eyebrow text-xs uppercase tracking-[0.2em] text-pink">
-        {teacher.role}
-      </p>
-      <div
-        className={`grid transition-all duration-300 ${
-          open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <p className="overflow-hidden font-body text-sm text-deep-navy/75">
-          {teacher.bio}
+      {teacher.role && (
+        <p className="font-eyebrow text-xs uppercase tracking-[0.2em] text-pink">
+          {teacher.role}
         </p>
-      </div>
+      )}
+      {teacher.bio && (
+        <div
+          className={`grid transition-all duration-300 ${
+            open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <p className="overflow-hidden font-body text-sm text-deep-navy/75">
+            {teacher.bio}
+          </p>
+        </div>
+      )}
     </article>
   );
 }

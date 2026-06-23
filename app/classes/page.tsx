@@ -16,6 +16,7 @@ const SCHEDULE = [
   { session: "Evening", days: "Mon – Thu", time: "5:30 – 7:00 PM" },
   { session: "Morning", days: "Tue & Wed", time: "8:30 – 10:00 AM" },
   { session: "Weekend", days: "Sat & Sun", time: "9:00 – 11:00 AM" },
+  { session: "Online", days: "", time: "Contact for details" },
 ];
 
 export default function ClassesPage() {
