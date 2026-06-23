@@ -71,7 +71,7 @@ export default function ContactPage() {
             className="h-80 w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Sriram+Nagar+Colony,+Kondapur,+Hyderabad+500084&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.266056313738!2d78.34963817462854!3d17.457895300771106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b1ad4ce83d%3A0xc96a8c0eba69099e!2sRhythms%20Of%20Kuchipudi!5e1!3m2!1sen!2sin!4v1782210689596!5m2!1sen!2sin"
           />
         </div>
       </Reveal>

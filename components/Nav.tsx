@@ -19,6 +19,7 @@ export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -26,6 +27,22 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Sync toggle UI with the class the boot script already applied to <html>.
+  useEffect(() => {
+    setDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  const toggleTheme = () => {
+    setDark((prev) => {
+      const next = !prev;
+      document.documentElement.classList.toggle("dark", next);
+      try {
+        localStorage.setItem("theme", next ? "dark" : "light");
+      } catch {}
+      return next;
+    });
+  };
 
   // Close the mobile menu whenever the route changes.
   useEffect(() => setOpen(false), [pathname]);
@@ -46,6 +63,7 @@ export default function Nav() {
           <Logo />
         </Link>
 
+        <div className="flex items-center gap-2">
         {/* Desktop links */}
         <ul className="hidden items-center gap-7 md:flex">
           {LINKS.map((link) => (
@@ -61,6 +79,27 @@ export default function Nav() {
             </li>
           ))}
         </ul>
+
+        {/* Theme toggle (all sizes) */}
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+          className="ml-2 flex h-10 w-10 items-center justify-center rounded-full text-deep-navy/80 transition-colors hover:text-pink"
+        >
+          {dark ? (
+            // Sun
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          ) : (
+            // Moon
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          )}
+        </button>
 
         {/* Mobile hamburger */}
         <button
@@ -86,6 +125,7 @@ export default function Nav() {
             }`}
           />
         </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}

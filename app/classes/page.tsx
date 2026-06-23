@@ -67,7 +67,7 @@ export default function ClassesPage() {
         </Reveal>
         <Reveal>
           <p className="mt-4 text-center font-body text-sm text-deep-navy/60">
-            Classes run Sunday – Thursday. Friday is our weekly off.
+            Classes run Saturday – Thursday. Friday is our weekly off.
           </p>
         </Reveal>
       </section>
