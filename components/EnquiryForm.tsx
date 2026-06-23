@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const LEVELS = ["Beginner", "Intermediate", "Advanced", "Rangam"];
+const LEVELS = ["Beginner", "Intermediate", "Advanced", "Rangapravesham"];
 
 export default function EnquiryForm() {
   const [sent, setSent] = useState(false);

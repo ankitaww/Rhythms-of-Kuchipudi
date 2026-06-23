@@ -12,16 +12,16 @@ const FAQS = [
     a: "Not at all. The Beginner level starts with foundational adavus and basic mudras, building from the very first step.",
   },
   {
-    q: "How long does it take to reach Rangam?",
-    a: "It varies by dedication and practice, but most dancers progress through the levels over several years before their Rangam recital.",
+    q: "How long does it take to reach Rangapravesham?",
+    a: "It varies by dedication and practice, but most dancers progress through the levels over several years before their Rangapravesham recital.",
   },
   {
     q: "What should I wear to class?",
-    a: "Comfortable clothing you can move freely in for early classes. As you advance, we guide you on traditional practice attire.",
+    a: "We have a class uniform — you can see it in the gallery section. Contact us for further details.",
   },
   {
     q: "Are there performance opportunities?",
-    a: "Yes — students perform at annual showcases, festivals, and ultimately their solo Rangam graduation recital.",
+    a: "Yes — students perform at annual showcases, festivals, and ultimately their solo Rangapravesham graduation recital.",
   },
 ];
 

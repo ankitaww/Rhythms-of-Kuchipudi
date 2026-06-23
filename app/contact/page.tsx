@@ -9,13 +9,15 @@ export const metadata: Metadata = {
   description: "Visit us, send an enquiry, or reach out on WhatsApp to begin your journey.",
 };
 
-const WHATSAPP_URL = "https://wa.me/919999999999";
+const WHATSAPP_URL = "https://wa.me/919948393920";
 
 const INFO = [
-  { label: "Studio", value: "12 Tarangam Lane, Kuchipudi, Andhra Pradesh 521136", color: "text-blue" },
-  { label: "Phone", value: "+91 99999 99999", color: "text-teal" },
-  { label: "Email", value: "hello@rhythmsofkuchipudi.in", color: "text-magenta" },
-  { label: "Hours", value: "Mon–Sun, 9:00 AM – 7:00 PM", color: "text-pink" },
+  { label: "Studio", value: "1-57/495/B, Sriram Nagar Colony, Kondapur, Hyderabad 500084", color: "text-blue" },
+  { label: "Phone", value: "+91 99483 93920", color: "text-teal" },
+  { label: "Email", value: "rhythmsofkuchipudi@gmail.com", color: "text-purple" },
+  { label: "Instagram", value: "@rhythmsofkuchipudi", color: "text-magenta" },
+  { label: "YouTube", value: "Rhythms of Kuchipudi", color: "text-pink" },
+  { label: "New Branches", value: "Coming soon", color: "text-orange" },
 ];
 
 export default function ContactPage() {
@@ -69,7 +71,7 @@ export default function ContactPage() {
             className="h-80 w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Kuchipudi,Andhra+Pradesh&output=embed"
+            src="https://www.google.com/maps?q=Sriram+Nagar+Colony,+Kondapur,+Hyderabad+500084&output=embed"
           />
         </div>
       </Reveal>

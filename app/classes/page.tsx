@@ -9,14 +9,13 @@ import { CLASSES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Classes — Rhythms of Kuchipudi",
-  description: "Four levels from Beginner to Rangam, weekly schedule, FAQs, and enrollment.",
+  description: "Four levels from Beginner to Rangapravesham, weekly schedule, FAQs, and enrollment.",
 };
 
 const SCHEDULE = [
-  { level: "Beginner", days: "Mon & Wed", time: "4:30 – 5:30 PM" },
-  { level: "Intermediate", days: "Tue & Thu", time: "5:30 – 7:00 PM" },
-  { level: "Advanced", days: "Sat", time: "9:00 – 11:00 AM" },
-  { level: "Rangam Prep", days: "Sun", time: "10:00 AM – 1:00 PM" },
+  { session: "Evening", days: "Mon – Thu", time: "5:30 – 7:00 PM" },
+  { session: "Morning", days: "Tue & Wed", time: "8:30 – 10:00 AM" },
+  { session: "Weekend", days: "Sat & Sun", time: "9:00 – 11:00 AM" },
 ];
 
 export default function ClassesPage() {
@@ -49,15 +48,15 @@ export default function ClassesPage() {
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-purple/5 font-ui text-sm uppercase tracking-wide text-purple">
-                  <th className="px-6 py-4">Level</th>
+                  <th className="px-6 py-4">Session</th>
                   <th className="px-6 py-4">Days</th>
                   <th className="px-6 py-4">Time</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-purple/10 font-body text-deep-navy/80">
                 {SCHEDULE.map((row) => (
-                  <tr key={row.level}>
-                    <td className="px-6 py-4 font-semibold">{row.level}</td>
+                  <tr key={row.session}>
+                    <td className="px-6 py-4 font-semibold">{row.session}</td>
                     <td className="px-6 py-4">{row.days}</td>
                     <td className="px-6 py-4">{row.time}</td>
                   </tr>
@@ -65,6 +64,11 @@ export default function ClassesPage() {
               </tbody>
             </table>
           </div>
+        </Reveal>
+        <Reveal>
+          <p className="mt-4 text-center font-body text-sm text-deep-navy/60">
+            Classes run Sunday – Thursday. Friday is our weekly off.
+          </p>
         </Reveal>
       </section>
 

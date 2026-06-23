@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const LINEAGE = [
-  "Began training at age six under Guru Vedantam Satyanarayana Sarma",
+  "Disciple of Padmabhushan Dr. Vempati Chinna Satyam",
   "Studied the Kuchipudi natya tradition for over fifteen years",
   "Specialized in tarangam and traditional margam repertoire",
   "Mentored by leading exponents of the Andhra classical schools",
@@ -43,10 +43,13 @@ export default function FounderPage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <Eyebrow>The Founder</Eyebrow>
+            <Eyebrow>Our Founder</Eyebrow>
             <h1 className="mt-3 font-heading text-4xl font-semibold text-ivory sm:text-5xl">
-              A lifetime devoted to the art
+              Guru Durgesh Nandini Vemavarapu
             </h1>
+            <p className="mt-3 font-body text-ivory/75">
+              Disciple of Padmabhushan Dr. Vempati Chinna Satyam
+            </p>
             <blockquote className="mt-6 font-heading text-xl italic text-ivory/85">
               “Kuchipudi is not a dance you learn — it is a language you begin to
               speak, one mudra at a time.”

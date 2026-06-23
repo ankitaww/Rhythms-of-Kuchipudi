@@ -29,7 +29,7 @@ export const CLASSES = [
     text: "Rigorous training in full margam pieces, solo choreography and stage performance.",
   },
   {
-    level: "Rangam",
+    level: "Rangapravesham",
     text: "The graduation recital — a full solo performance marking the completion of the classical margam.",
   },
 ];
