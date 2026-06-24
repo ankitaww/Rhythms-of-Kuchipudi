@@ -20,6 +20,12 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Show the admin link only after logging into /admin (set by proxy.ts).
+  useEffect(() => {
+    setIsAdmin(document.cookie.includes("rok_admin=1"));
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -78,6 +84,18 @@ export default function Nav() {
               </Link>
             </li>
           ))}
+          {isAdmin && (
+            <li>
+              <Link
+                href="/admin/enquiries"
+                className={`font-ui text-sm font-semibold transition-colors hover:text-pink ${
+                  isActive("/admin") ? "text-pink" : "text-deep-navy/80"
+                }`}
+              >
+                Enquiries
+              </Link>
+            </li>
+          )}
         </ul>
 
         {/* Theme toggle (all sizes) */}
@@ -147,6 +165,18 @@ export default function Nav() {
               </Link>
             </li>
           ))}
+          {isAdmin && (
+            <li>
+              <Link
+                href="/admin/enquiries"
+                className={`block py-3 font-ui font-semibold transition-colors hover:text-pink ${
+                  isActive("/admin") ? "text-pink" : "text-deep-navy/80"
+                }`}
+              >
+                Enquiries
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </header>

@@ -6,11 +6,41 @@ const LEVELS = ["Beginner", "Intermediate", "Advanced", "Rangapravesham"];
 
 export default function EnquiryForm() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // No backend yet — acknowledge locally so the form feels alive.
-    setSent(true);
+    setError(null);
+    setSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      level: formData.get("level"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? "Something went wrong. Please try again.");
+      }
+
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (sent) {
@@ -93,11 +123,18 @@ export default function EnquiryForm() {
         />
       </label>
 
+      {error && (
+        <p className="font-body text-sm text-red-600" role="alert">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="mt-2 rounded-full bg-pink px-8 py-3 font-ui font-bold text-white transition-transform hover:scale-[1.02] focus-visible:scale-[1.02]"
+        disabled={submitting}
+        className="mt-2 rounded-full bg-pink px-8 py-3 font-ui font-bold text-white transition-transform hover:scale-[1.02] focus-visible:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send Enquiry
+        {submitting ? "Sending…" : "Send Enquiry"}
       </button>
     </form>
   );

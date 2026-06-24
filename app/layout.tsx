@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 import UnderConstruction from "@/components/UnderConstruction";
 import { UNDER_CONSTRUCTION } from "@/lib/site";
+import { headers } from "next/headers";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -39,6 +40,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.rhythmsofkuchipudi.com"),
   title: "Rhythms of Kuchipudi — Where Every Step Tells a Story",
   description:
     "A classical Kuchipudi dance school carrying forward a 300-year-old living tradition with devotion, discipline, and joy.",
@@ -46,11 +48,15 @@ export const metadata: Metadata = {
   ...(UNDER_CONSTRUCTION ? { robots: { index: false, follow: false } } : {}),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // The admin area (gated by proxy.ts) bypasses the under-construction page.
+  const isAdminArea = (await headers()).get("x-admin-area") === "1";
+  const showConstruction = UNDER_CONSTRUCTION && !isAdminArea;
+
   return (
     <html
       lang="en"
@@ -66,7 +72,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-ivory text-deep-navy">
-        {UNDER_CONSTRUCTION ? (
+        {showConstruction ? (
           <UnderConstruction />
         ) : (
           <>
