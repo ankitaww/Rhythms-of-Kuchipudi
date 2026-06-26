@@ -5,7 +5,7 @@ import { useState } from "react";
 const FAQS = [
   {
     q: "What age can my child start?",
-    a: "Our Beginner classes are open to all ages — children as young as five and adults alike. No prior experience is needed.",
+    a: "Our Beginner classes are open to all ages, children as young as five and adults alike. No prior experience is needed.",
   },
   {
     q: "Do I need any prior dance experience?",
@@ -17,11 +17,11 @@ const FAQS = [
   },
   {
     q: "What should I wear to class?",
-    a: "We have a class uniform — you can see it in the gallery section. Contact us for further details.",
+    a: "We have a class uniform, you can see it in the gallery section. Contact us for further details.",
   },
   {
     q: "Are there performance opportunities?",
-    a: "Yes — students perform at annual showcases, festivals, and ultimately their solo Rangapravesham graduation recital.",
+    a: "Yes, students perform at annual showcases, festivals, and ultimately their solo Rangapravesham graduation recital.",
   },
 ];
 

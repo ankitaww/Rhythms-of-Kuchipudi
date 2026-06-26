@@ -89,7 +89,7 @@ export default function Home() {
         <Reveal>
           <Eyebrow>A Living Tradition</Eyebrow>
           <p className="mt-6 font-heading text-2xl leading-relaxed text-deep-navy sm:text-3xl">
-            At Rhythms of Kuchipudi, we don&apos;t just teach dance — we pass
+            At Rhythms of Kuchipudi, we don&apos;t just teach dance, we pass
             down a living tradition. Rooted in the ancient village of Kuchipudi
             in Andhra Pradesh, our school carries forward a 300-year-old art
             form with devotion, discipline, and joy.
@@ -150,7 +150,7 @@ export default function Home() {
           <Reveal delay={120}>
             <Eyebrow>From the Founder</Eyebrow>
             <blockquote className="mt-4 font-heading text-2xl italic leading-relaxed text-ivory sm:text-3xl">
-              “Kuchipudi is not a dance you learn — it is a language you begin to
+              “Kuchipudi is not a dance you learn; it is a language you begin to
               speak, one mudra at a time.”
             </blockquote>
             <Link

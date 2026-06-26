@@ -1,6 +1,6 @@
 import { PETAL_NAMES, PETAL_HEX } from "./petals";
 
-// Seven sweeping arcs fanning from a center point — the dancer's skirt rendered as a divider.
+// Seven sweeping arcs fanning from a center point: the dancer's skirt rendered as a divider.
 // Drops between every major section sitewide.
 
 const SPAN = 132; // total fan spread in degrees

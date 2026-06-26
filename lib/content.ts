@@ -30,7 +30,7 @@ export const CLASSES = [
   },
   {
     level: "Rangapravesham",
-    text: "The graduation recital — a full solo performance marking the completion of the classical margam.",
+    text: "The graduation recital, a full solo performance marking the completion of the classical margam.",
   },
 ];
 
@@ -44,7 +44,7 @@ export const STATS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "My daughter has blossomed — not just as a dancer but as a young woman who carries herself with grace.",
+      "My daughter has blossomed, not just as a dancer but as a young woman who carries herself with grace.",
     author: "Priya Raghavan",
     role: "Parent",
   },
@@ -62,6 +62,6 @@ export const TESTIMONIALS = [
   },
 ];
 
-/** placehold.co image — solid purple on ivory text. */
+/** placehold.co image: solid purple on ivory text. */
 export const ph = (w: number, h: number, text: string) =>
   `https://placehold.co/${w}x${h}/5B2D8E/FDF8F2?text=${encodeURIComponent(text)}`;

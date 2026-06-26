@@ -7,9 +7,9 @@ import { PETAL_BG, petalAt } from "@/components/petals";
 import { ph } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Founder — Rhythms of Kuchipudi",
+  title: "Founder | Rhythms of Kuchipudi",
   description:
-    "Meet Guru Durgesh Nandini Vemavarapu — disciple of Padma Sri Dr. Vempati Chinna Satyam and founder of Rhythms of Kuchipudi.",
+    "Meet Guru Durgesh Nandini Vemavarapu, disciple of Padma Sri Dr. Vempati Chinna Satyam and founder of Rhythms of Kuchipudi.",
 };
 
 const LINEAGE = [
@@ -49,7 +49,7 @@ export default function FounderPage() {
               Natya Visharad · Disciple of Padma Sri Dr. Vempati Chinna Satyam
             </p>
             <blockquote className="mt-6 font-heading text-xl italic text-ivory/85">
-              “Kuchipudi is not a dance you learn — it is a language you begin to
+              “Kuchipudi is not a dance you learn; it is a language you begin to
               speak, one mudra at a time.”
             </blockquote>
           </Reveal>
@@ -64,8 +64,8 @@ export default function FounderPage() {
         <Reveal>
           <div className="mt-8 space-y-4 font-body text-deep-navy/80">
             <p>
-              Durgesh Nandini began her <em>kalaaraadhana</em> — her worship of
-              the art form — with Kuchipudi at the tender age of seven, at the
+              Durgesh Nandini began her <em>kalaaraadhana</em>, her worship of
+              the art form, with Kuchipudi at the tender age of seven, at the
               feet of the renowned master Kalidas Samman, Kala Prapoorna, Padma
               Sri, Dr. Vempati Chinna Satyam. Celebrated across India for his
               lifelong dedication to the form, Master Chinna Satyam trained
@@ -73,8 +73,8 @@ export default function FounderPage() {
               the country.
             </p>
             <p>
-              She spent the most dedicated years of her life — close to two
-              decades — under her guru&apos;s masterly guidance, and went on to
+              She spent the most dedicated years of her life, close to two
+              decades, under her guru&apos;s masterly guidance, and went on to
               receive the certificate of <em>Natya Visharad</em>.
             </p>
             <p>
@@ -90,7 +90,7 @@ export default function FounderPage() {
               Kuchipudi has been a registered institution for the past ten years.
               Staying true to her teaching methods, every student she takes under
               her wing learns to play the <em>nattuvangam</em> with complete
-              professional proficiency — and every student learns to become a
+              professional proficiency, and every student learns to become a
               teacher.
             </p>
           </div>

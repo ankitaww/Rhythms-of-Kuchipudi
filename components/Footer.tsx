@@ -49,7 +49,7 @@ export default function Footer() {
             </h3>
             <p className="mt-3 max-w-xs font-body text-sm text-ivory/70">
               A living tradition rooted in the ancient village of Kuchipudi,
-              Andhra Pradesh — taught with devotion, discipline, and joy.
+              Andhra Pradesh, taught with devotion, discipline, and joy.
             </p>
           </div>
 

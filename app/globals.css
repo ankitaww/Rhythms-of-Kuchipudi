@@ -13,7 +13,7 @@
   --color-ivory: #FDF8F2;
   --color-deep-navy: #1A0A2E;
 
-  /* Fonts — wired to next/font CSS variables set in layout.tsx */
+  /* Fonts: wired to next/font CSS variables set in layout.tsx */
   --font-heading: var(--font-cormorant), serif;
   --font-ui: var(--font-nunito), system-ui, sans-serif;
   --font-body: var(--font-spectral), Georgia, serif;
@@ -32,7 +32,7 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Dark theme — activated by adding `.dark` to <html> (toggle lives in the Nav,
+   Dark theme: activated by adding `.dark` to <html> (toggle lives in the Nav,
    no-flash boot script in layout.tsx). Rather than editing every component, we
    remap the surface/text utilities here. Flipping the deep-navy token recolors
    every `text-deep-navy/*` utility to light in a single move.
@@ -59,7 +59,7 @@ body {
   background-color: #1c0e33;
 }
 
-/* Re-pin genuinely-dark bands — the deep-navy token was flipped light above
+/* Re-pin genuinely-dark bands: the deep-navy token was flipped light above
    so it could recolor text, so restore a dark value for backgrounds. */
 .dark .bg-deep-navy {
   background-color: #150a28;
@@ -79,7 +79,7 @@ body {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Scroll-reveal — elements lift in once the IntersectionObserver adds .is-visible */
+/* Scroll-reveal: elements lift in once the IntersectionObserver adds .is-visible */
 .reveal {
   opacity: 0;
   transform: translateY(28px);

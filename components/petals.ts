@@ -1,4 +1,4 @@
-// Signature petal color sequence — cards, dots, stats, dividers cycle through these.
+// Signature petal color sequence: cards, dots, stats, dividers cycle through these.
 // Order mirrors the dancer's rainbow skirt fan: blue → teal → magenta → pink → orange → yellow → green.
 
 export const PETAL_NAMES = [
@@ -30,7 +30,7 @@ export const petalAt = (i: number): PetalName =>
 /** Hex value at a cyclic index. */
 export const petalHexAt = (i: number): string => PETAL_HEX[petalAt(i)];
 
-// Tailwind utility lookups — static strings so the v4 scanner keeps them.
+// Tailwind utility lookups: static strings so the v4 scanner keeps them.
 export const PETAL_BG: Record<PetalName, string> = {
   blue: "bg-blue",
   teal: "bg-teal",

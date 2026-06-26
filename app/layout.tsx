@@ -42,7 +42,7 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rhythmsofkuchipudi.com"),
-  title: "Rhythms of Kuchipudi — Where Every Step Tells a Story",
+  title: "Rhythms of Kuchipudi | Where Every Step Tells a Story",
   description:
     "A classical Kuchipudi dance school carrying forward a 300-year-old living tradition with devotion, discipline, and joy.",
   // Keep the holding page out of search results; lifts automatically at launch.

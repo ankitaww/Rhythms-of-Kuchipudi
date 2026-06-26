@@ -1,4 +1,4 @@
-// Cinzel, uppercase, wide-tracked, pink — sits above every section heading.
+// Cinzel, uppercase, wide-tracked, pink: sits above every section heading.
 
 export default function Eyebrow({
   children,

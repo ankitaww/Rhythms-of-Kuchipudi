@@ -8,7 +8,7 @@ import { PETAL_BORDER, PETAL_TEXT, petalAt } from "@/components/petals";
 import { CLASSES } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Classes — Rhythms of Kuchipudi",
+  title: "Classes | Rhythms of Kuchipudi",
   description: "Four levels from Beginner to Rangapravesham, weekly schedule, FAQs, and enrollment.",
 };
 
@@ -93,7 +93,7 @@ export default function ClassesPage() {
               Ready to take your first step?
             </h2>
             <p className="mx-auto mt-4 max-w-xl font-body text-ivory/75">
-              Join a community that carries a 300-year tradition forward — with
+              Join a community that carries a 300-year tradition forward, with
               devotion, discipline, and joy.
             </p>
             <Link

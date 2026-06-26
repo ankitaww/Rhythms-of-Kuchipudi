@@ -25,7 +25,7 @@ export default function UnderConstruction() {
 
       <p className="mt-6 max-w-md font-body text-deep-navy/75">
         We&apos;re putting the finishing touches on something beautiful. Please
-        check back soon — in the meantime, we&apos;d love to hear from you.
+        check back soon. In the meantime, we&apos;d love to hear from you.
       </p>
 
       <div className="mt-8 space-y-1 font-body text-deep-navy/80">

@@ -65,7 +65,7 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-        <Link href="/" aria-label="Rhythms of Kuchipudi — home">
+        <Link href="/" aria-label="Rhythms of Kuchipudi, home">
           <Logo />
         </Link>
 

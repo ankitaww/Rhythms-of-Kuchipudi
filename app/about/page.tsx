@@ -7,7 +7,7 @@ import { PETAL_BG, petalAt } from "@/components/petals";
 import { ph } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About — Rhythms of Kuchipudi",
+  title: "About | Rhythms of Kuchipudi",
   description:
     "Our story, the art of Kuchipudi, the Guru-Shishya Parampara, and milestones.",
 };
@@ -34,7 +34,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 font-body text-deep-navy/80">
               Rhythms of Kuchipudi began twenty years ago in the humble home of
-              Guru Durgesh Nandini Vemavarapu — a disciple of Padma Sri Dr.
+              Guru Durgesh Nandini Vemavarapu, a disciple of Padma Sri Dr.
               Vempati Chinna Satyam and a Natya Visharad who has devoted her life
               to this art. What started as a few students gathered around their
               guru has, over the past decade, grown into a registered
@@ -45,7 +45,7 @@ export default function AboutPage() {
               the school is built on one belief: that this art is too precious to
               be kept, and must be passed on. Staying true to her teaching
               methods, every student learns to play the nattuvangam with
-              professional proficiency — and every student learns to become a
+              professional proficiency, and every student learns to become a
               teacher, carrying the tradition forward in turn.
             </p>
           </Reveal>
@@ -73,9 +73,9 @@ export default function AboutPage() {
             the Krishna district of Andhra Pradesh. Unlike other classical
             styles, it uniquely blends <em>nritta</em> (pure dance),{" "}
             <em>nritya</em> (expressive dance) and <em>natya</em> (dramatic
-            performance) — often telling stories from the Bhagavatam and other
+            performance), often telling stories from the Bhagavatam and other
             Puranic texts. Its hallmark: lightning-fast footwork, fluid upper
-            body movements, expressive eyes, and the iconic tarangam — where the
+            body movements, expressive eyes, and the iconic tarangam, where the
             dancer performs balancing on the rim of a brass plate.
           </p>
         </Reveal>
@@ -93,7 +93,7 @@ export default function AboutPage() {
           />
           <Reveal>
             <p className="mt-8 font-body text-lg leading-relaxed text-ivory/80">
-              At the heart of our school is the Guru-Shishya Parampara — the
+              At the heart of our school is the Guru-Shishya Parampara, the
               sacred bond between teacher and student through which knowledge is
               passed not through textbooks, but through years of devoted
               practice, observation, and trust. Each dancer becomes a link in an

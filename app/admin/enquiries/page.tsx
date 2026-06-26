@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { supabaseAdmin } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "Enquiries — Admin",
+  title: "Enquiries | Admin",
   robots: { index: false, follow: false },
 };
 
@@ -78,10 +78,10 @@ export default async function EnquiriesAdminPage() {
                     </a>
                   </td>
                   <td className="whitespace-nowrap px-4 py-3 text-deep-navy/80">
-                    {e.level ?? "—"}
+                    {e.level ?? "-"}
                   </td>
                   <td className="max-w-md px-4 py-3 text-deep-navy/80">
-                    {e.message ?? "—"}
+                    {e.message ?? "-"}
                   </td>
                 </tr>
               ))}

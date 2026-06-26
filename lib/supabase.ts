@@ -1,6 +1,6 @@
 // Server-only Supabase client.
 //
-// Uses the SERVICE ROLE key, which bypasses Row Level Security — so this module
+// Uses the SERVICE ROLE key, which bypasses Row Level Security, so this module
 // must NEVER be imported into a Client Component. It is only used inside Route
 // Handlers (e.g. app/api/enquiry/route.ts). The key is read from the
 // SUPABASE_SERVICE_ROLE_KEY env var and is never sent to the browser.

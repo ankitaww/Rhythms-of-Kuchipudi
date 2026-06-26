@@ -4,8 +4,8 @@ import PetalDivider from "@/components/PetalDivider";
 import Gallery from "@/components/Gallery";
 
 export const metadata: Metadata = {
-  title: "Gallery — Rhythms of Kuchipudi",
-  description: "Moments in motion — performances, classes, festivals, and Rangam recitals.",
+  title: "Gallery | Rhythms of Kuchipudi",
+  description: "Moments in motion: performances, classes, festivals, and Rangam recitals.",
 };
 
 export default function GalleryPage() {

@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import TeacherCard, { type Teacher } from "@/components/TeacherCard";
 
 export const metadata: Metadata = {
-  title: "Teachers — Rhythms of Kuchipudi",
+  title: "Teachers | Rhythms of Kuchipudi",
   description: "Meet the gurus who carry the tradition forward.",
 };
 

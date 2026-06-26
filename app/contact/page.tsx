@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Rhythms of Kuchipudi",
+  title: "Contact | Rhythms of Kuchipudi",
   description: "Visit us, send an enquiry, or reach out on WhatsApp to begin your journey.",
 };
 
