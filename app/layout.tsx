@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   Cormorant_Garamond,
   Nunito,
-  DM_Sans,
+  Spectral,
   Cinzel,
 } from "next/font/google";
 import "./globals.css";
@@ -26,9 +26,10 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const spectral = Spectral({
+  variable: "--font-spectral",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -61,7 +62,7 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${nunito.variable} ${dmSans.variable} ${cinzel.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${nunito.variable} ${spectral.variable} ${cinzel.variable} h-full antialiased`}
     >
       <head>
         {/* Apply the saved (or system) theme before paint to avoid a flash. */}

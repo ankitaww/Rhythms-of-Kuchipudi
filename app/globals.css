@@ -16,7 +16,7 @@
   /* Fonts — wired to next/font CSS variables set in layout.tsx */
   --font-heading: var(--font-cormorant), serif;
   --font-ui: var(--font-nunito), system-ui, sans-serif;
-  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+  --font-body: var(--font-spectral), Georgia, serif;
   --font-eyebrow: var(--font-cinzel), serif;
 }
 
