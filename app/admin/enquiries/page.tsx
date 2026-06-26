@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Enquiries | Admin",
@@ -20,7 +20,7 @@ type Enquiry = {
 };
 
 export default async function EnquiriesAdminPage() {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("enquiries")
     .select("*")
     .order("created_at", { ascending: false });

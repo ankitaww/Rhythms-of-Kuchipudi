@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 const LEVELS = ["Beginner", "Intermediate", "Advanced", "Rangapravesham"];
 const MAX = { name: 120, email: 254, phone: 40, message: 2000 } as const;
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Message is too long." }, { status: 400 });
   }
 
-  const { error } = await supabaseAdmin.from("enquiries").insert({
+  const { error } = await getSupabaseAdmin().from("enquiries").insert({
     name,
     email,
     phone,
