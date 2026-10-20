@@ -1,114 +1,52 @@
-"use client";
+import Link from "next/link";
+import { PETAL_NAMES, PETAL_BG } from "@/components/petals";
 
-import { useEffect, useState } from "react";
-import { ph } from "@/lib/content";
-import { petalHexAt } from "@/components/petals";
+// "Coming soon" banner shown until real gallery photos are added.
+// The previous filterable masonry grid + lightbox is in git history (com9).
 
-const CATEGORIES = ["All", "Performances", "Classes", "Festivals", "Rangam"] as const;
-type Category = (typeof CATEGORIES)[number];
-
-type Shot = { id: number; category: Exclude<Category, "All">; ratio: string };
-
-// 12 slots with varied aspect ratios for a masonry feel.
-const SHOTS: Shot[] = [
-  { id: 1, category: "Performances", ratio: "aspect-[3/4]" },
-  { id: 2, category: "Classes", ratio: "aspect-square" },
-  { id: 3, category: "Festivals", ratio: "aspect-[4/3]" },
-  { id: 4, category: "Rangam", ratio: "aspect-[3/4]" },
-  { id: 5, category: "Performances", ratio: "aspect-square" },
-  { id: 6, category: "Classes", ratio: "aspect-[4/3]" },
-  { id: 7, category: "Festivals", ratio: "aspect-[3/4]" },
-  { id: 8, category: "Rangam", ratio: "aspect-square" },
-  { id: 9, category: "Performances", ratio: "aspect-[4/3]" },
-  { id: 10, category: "Classes", ratio: "aspect-[3/4]" },
-  { id: 11, category: "Festivals", ratio: "aspect-square" },
-  { id: 12, category: "Rangam", ratio: "aspect-[4/3]" },
-];
-
-export default function Gallery() {
-  const [filter, setFilter] = useState<Category>("All");
-  const [lightbox, setLightbox] = useState<number | null>(null);
-
-  const visible =
-    filter === "All" ? SHOTS : SHOTS.filter((s) => s.category === filter);
-
-  // Close the lightbox on Escape.
-  useEffect(() => {
-    if (lightbox === null) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setLightbox(null);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox]);
-
-  const active = SHOTS.find((s) => s.id === lightbox);
-
+export default function Gallery({ compact = false }: { compact?: boolean }) {
   return (
-    <>
-      {/* Filter tabs */}
-      <div className="flex flex-wrap justify-center gap-3">
-        {CATEGORIES.map((c) => (
-          <button
-            key={c}
-            type="button"
-            onClick={() => setFilter(c)}
-            className={`rounded-full px-5 py-2 font-ui text-sm font-semibold transition-colors ${
-              filter === c
-                ? "bg-pink text-white"
-                : "bg-white text-deep-navy/70 hover:text-pink"
-            }`}
-          >
-            {c}
-          </button>
+    <div
+      className={`relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-white text-center shadow-sm ${
+        compact ? "mt-12 px-6 py-12" : "mt-10 px-6 py-16 sm:px-12 sm:py-20"
+      }`}
+    >
+      {/* Petal stripe across the top */}
+      <div className="absolute inset-x-0 top-0 flex h-1.5" aria-hidden="true">
+        {PETAL_NAMES.map((p) => (
+          <span key={p} className={`flex-1 ${PETAL_BG[p]}`} />
         ))}
       </div>
 
-      {/* Masonry grid */}
-      <div className="mt-10 columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
-        {visible.map((shot, i) => (
-          <button
-            key={shot.id}
-            type="button"
-            onClick={() => setLightbox(shot.id)}
-            className="block w-full overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02]"
-            style={{ borderBottom: `4px solid ${petalHexAt(i)}` }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={ph(600, 700, `${shot.category} ${shot.id}`)}
-              alt={`${shot.category} ${shot.id}`}
-              className={`w-full object-cover ${shot.ratio}`}
-            />
-          </button>
-        ))}
-      </div>
+      <p className="font-eyebrow text-xs uppercase tracking-[0.3em] text-pink">
+        Coming Soon
+      </p>
+      <h3 className="mt-4 font-heading text-3xl font-semibold text-purple sm:text-4xl">
+        Our gallery is being curated
+      </h3>
+      <p className="mx-auto mt-4 max-w-xl font-body text-deep-navy/75">
+        We&apos;re gathering photographs from our performances, classes,
+        festivals and Rangam recitals. Check back soon to see our dancers in
+        motion.
+      </p>
 
-      {/* Lightbox */}
-      {active && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setLightbox(null)}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-deep-navy/90 p-5"
+      {compact ? (
+        <Link
+          href="/gallery"
+          className="mt-8 inline-block font-ui font-bold text-pink underline-offset-4 hover:underline"
         >
-          <button
-            type="button"
-            aria-label="Close"
-            onClick={() => setLightbox(null)}
-            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl text-ivory hover:bg-white/20"
-          >
-            ×
-          </button>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={ph(900, 1100, `${active.category} ${active.id}`)}
-            alt={`${active.category} ${active.id}`}
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl"
-          />
-        </div>
+          Visit the gallery page →
+        </Link>
+      ) : (
+        <a
+          href="https://instagram.com/rhythmsofkuchipudi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block rounded-full bg-pink px-6 py-3 font-ui font-bold text-white transition-transform hover:scale-105"
+        >
+          Follow us on Instagram meanwhile
+        </a>
       )}
-    </>
+    </div>
   );
 }

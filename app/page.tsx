@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Eyebrow from "@/components/Eyebrow";
 import Reveal from "@/components/Reveal";
 import EnquiryForm from "@/components/EnquiryForm";
+import Gallery from "@/components/Gallery";
 import { PETAL_BORDER, PETAL_TEXT, petalAt } from "@/components/petals";
 import {
   PILLARS,
@@ -168,28 +169,9 @@ export default function Home() {
       {/* Gallery preview */}
       <section className="mx-auto max-w-6xl px-5">
         <SectionHeading eyebrow="Moments in Motion" title="From our gallery" />
-        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Reveal key={i} delay={i * 60}>
-              <div className={`overflow-hidden rounded-xl border-b-4 ${PETAL_BORDER[petalAt(i)]}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={ph(600, 500, `Performance ${i + 1}`)}
-                  alt={`Performance ${i + 1}`}
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Link
-            href="/gallery"
-            className="font-ui font-bold text-pink underline-offset-4 hover:underline"
-          >
-            See the full gallery →
-          </Link>
-        </div>
+        <Reveal>
+          <Gallery compact />
+        </Reveal>
       </section>
 
       <PetalDivider />
